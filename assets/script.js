@@ -6,3 +6,14 @@
 // Win & Lose Counter, It was work with the Hidden Word Function
 // Mina works on Win & Lose Counter
 // Start button last function to communicate with the other functions. 
+
+var timeleft = 10;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    document.getElementById("countdown").innerHTML = "Finished";
+  } else {
+    document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+  }
+  timeleft -= 1;
+}, 1000);
