@@ -17,3 +17,27 @@ var downloadTimer = setInterval(function(){
   }
   timeleft -= 1;
 }, 1000);
+
+// function to check if hiddenWord and computerWord are identical
+function checkArrays(arr1, arr2) {
+    if (arr1.length !== arr2.length) {
+        return false;
+    }
+    for (var i = 0; i < arr1.length; i++) {
+        if (arr1[i] !== arr2[i]) {
+            return false;
+        } 
+    }
+    return true;
+  }
+  // function to display words photo after a win
+  function PrintImage(source)
+  {
+      var Pagelink = "about:blank";
+      var pwa = window.open(Pagelink, "_new");
+      pwa.document.open();
+      pwa.document.write(ImagetoPrint(source));
+      pwa.document.close();
+  }
+  
+  
